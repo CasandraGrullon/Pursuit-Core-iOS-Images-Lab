@@ -13,7 +13,7 @@ struct Pokemon: Decodable {
 }
 struct Cards: Decodable {
     let name: String
-    let type: [String]
+    let types: [String]
     let imageHiRes: String
     let imageURL: String
     let set: String

@@ -24,6 +24,8 @@ class PokemonVC: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    func loadData(){
         
     }
     
@@ -35,8 +37,9 @@ extension PokemonVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "pokemonCell", for: indexPath) as? PokemonCell else {
-            fatalError("cell issue")
+            fatalError("issue in cell")
         }
+        
         let poke = pokemon[indexPath.row]
         
         cell?.configureCell(for: poke)

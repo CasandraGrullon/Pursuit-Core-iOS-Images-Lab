@@ -9,7 +9,7 @@
 import Foundation
 
 struct PokemonAPI {
-    static func getPokemon(completion: @escaping(Result<[Pokemon], AppError>) -> ()){
+    static func getPokemon(completion: @escaping(Result<[Cards], AppError>) -> ()){
 
         let endpointURLString = "https://api.pokemontcg.io/v1/cards"
 
@@ -20,8 +20,8 @@ struct PokemonAPI {
             case .success(let data):
 
                 do{
-                    let pokemonData = try JSONDecoder().decode([Pokemon].self, from: data)
-                    let pokemon = pokemonData
+                    let pokemonData = try JSONDecoder().decode(Pokemon.self, from: data)
+                    let pokemon = pokemonData.cards
                     completion(.success(pokemon))
                     
                 }catch{
