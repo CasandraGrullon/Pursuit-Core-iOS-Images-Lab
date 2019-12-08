@@ -9,7 +9,7 @@
 import Foundation
 
 struct PokemonAPI {
-    static func getPokemon(completion: @escaping(Result<[Cards], AppError>) -> ()){
+    static func getPokemon(completion: @escaping(Result<[Cards], AppError>) -> ()) {
 
         let endpointURLString = "https://api.pokemontcg.io/v1/cards"
 

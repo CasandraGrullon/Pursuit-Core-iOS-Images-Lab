@@ -104,47 +104,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wkR-Mk-4nY">
-                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pokemonCell" rowHeight="115" id="SLz-vL-4R6" customClass="PokemonCell" customModule="ImagesLab" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="115"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SLz-vL-4R6" id="dOE-sE-iQw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OdF-mR-lmK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="OdF-mR-lmK" secondAttribute="bottom" id="K6A-fI-Aj2"/>
-                                                <constraint firstAttribute="trailing" secondItem="OdF-mR-lmK" secondAttribute="trailing" id="N1C-z2-RUs"/>
-                                                <constraint firstItem="OdF-mR-lmK" firstAttribute="leading" secondItem="dOE-sE-iQw" secondAttribute="leading" id="cCm-gO-EBU"/>
-                                                <constraint firstItem="OdF-mR-lmK" firstAttribute="top" secondItem="dOE-sE-iQw" secondAttribute="top" id="d1e-ZB-jt2"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="pokemonThumbImage" destination="OdF-mR-lmK" id="iW3-fJ-dnV"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="4qE-BC-xL4">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k8D-C5-HVA">
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pokemonCell" id="2v5-yw-WUy" customClass="PokemonCell" customModule="ImagesLab" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2v5-yw-WUy" id="o4a-B4-3p9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="85K-Ea-lAd">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="85K-Ea-lAd" firstAttribute="top" secondItem="o4a-B4-3p9" secondAttribute="top" id="A1U-NH-WKS"/>
+                                                <constraint firstItem="85K-Ea-lAd" firstAttribute="leading" secondItem="o4a-B4-3p9" secondAttribute="leading" id="Oqk-Na-Z4d"/>
+                                                <constraint firstAttribute="bottom" secondItem="85K-Ea-lAd" secondAttribute="bottom" id="psy-5V-E7G"/>
+                                                <constraint firstAttribute="trailing" secondItem="85K-Ea-lAd" secondAttribute="trailing" id="zxh-X9-OZb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pokemonThumbImage" destination="85K-Ea-lAd" id="8mS-br-LWp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4qE-BC-xL4" firstAttribute="trailing" secondItem="XYC-qf-lCK" secondAttribute="trailing" id="EQ9-VK-Qos"/>
-                            <constraint firstItem="wkR-Mk-4nY" firstAttribute="bottom" secondItem="XYC-qf-lCK" secondAttribute="bottom" id="OEM-x5-kor"/>
+                            <constraint firstItem="k8D-C5-HVA" firstAttribute="top" secondItem="4qE-BC-xL4" secondAttribute="bottom" id="G2X-FY-0hZ"/>
+                            <constraint firstItem="XYC-qf-lCK" firstAttribute="trailing" secondItem="k8D-C5-HVA" secondAttribute="trailing" id="HRc-qU-zje"/>
                             <constraint firstItem="4qE-BC-xL4" firstAttribute="leading" secondItem="XYC-qf-lCK" secondAttribute="leading" id="Poz-xK-l4V"/>
-                            <constraint firstItem="wkR-Mk-4nY" firstAttribute="leading" secondItem="XYC-qf-lCK" secondAttribute="leading" id="XzU-wy-Wfx"/>
-                            <constraint firstItem="XYC-qf-lCK" firstAttribute="trailing" secondItem="wkR-Mk-4nY" secondAttribute="trailing" id="rSO-Bo-qNw"/>
-                            <constraint firstItem="wkR-Mk-4nY" firstAttribute="top" secondItem="4qE-BC-xL4" secondAttribute="bottom" id="u7q-YF-MiE"/>
+                            <constraint firstItem="k8D-C5-HVA" firstAttribute="leading" secondItem="XYC-qf-lCK" secondAttribute="leading" id="i6a-C0-Cbv"/>
+                            <constraint firstItem="XYC-qf-lCK" firstAttribute="bottom" secondItem="k8D-C5-HVA" secondAttribute="bottom" id="voI-00-7D0"/>
                             <constraint firstItem="4qE-BC-xL4" firstAttribute="top" secondItem="XYC-qf-lCK" secondAttribute="top" id="zmd-ta-aj6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XYC-qf-lCK"/>
@@ -152,7 +152,7 @@
                     <navigationItem key="navigationItem" id="hSU-uc-S6y"/>
                     <connections>
                         <outlet property="searchBar" destination="4qE-BC-xL4" id="NbE-DF-Q6J"/>
-                        <outlet property="tableView" destination="wkR-Mk-4nY" id="bts-SV-IUX"/>
+                        <outlet property="tableView" destination="k8D-C5-HVA" id="bal-eo-Ysq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="71q-bt-7mv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

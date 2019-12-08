@@ -12,21 +12,18 @@ class PokemonCell: UITableViewCell {
 
     @IBOutlet weak var pokemonThumbImage: UIImageView!
     
-    var pokemon: Pokemon?
+    var pokemon: Cards?
     
-    func configureCell(for poke: Pokemon){
-        guard let cellPokemon = pokemon?.cards else {
-            return
-        }
-        NetworkHelper.shared.performDataTask(with: cellPokemon.first?.imageURL ?? "") { (result) in
+    func configureCell(for poke: Cards){
+        NetworkHelper.shared.performDataTask(with: poke.imageUrl) { [unowned self] (result) in
             switch result{
             case .failure(let appError):
                 print("appError: \(appError)")
-            case .success(let data):
-                let image = UIImage(data: data)
-                DispatchQueue.main.async {
-                    self.pokemonThumbImage.image = image
-                }
+          
+            case .success(let image):
+            DispatchQueue.main.async {
+                self.pokemonThumbImage.image = UIImage(data: image)
+            }
             }
         }
     }

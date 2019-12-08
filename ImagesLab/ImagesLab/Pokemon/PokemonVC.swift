@@ -13,22 +13,29 @@ class PokemonVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var pokemon = [Pokemon](){
+    var pokemon = [Cards](){
         didSet{
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            
+            tableView.reloadData()
+            
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        loadData()
     }
     func loadData(){
-        
+        PokemonAPI.getPokemon { (result) in
+            switch result{
+            case .failure(let appError):
+                print("appError: \(appError)")
+            case .success(let cards):
+                self.pokemon = cards
+            }
+        }
     }
-    
 }
 extension PokemonVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,13 +43,13 @@ extension PokemonVC: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "pokemonCell", for: indexPath) as? PokemonCell else {
-            fatalError("issue in cell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "pokemonCell", for: indexPath) as? PokemonCell else {
+            fatalError("cell issue")
         }
         
         let poke = pokemon[indexPath.row]
         
-        cell?.configureCell(for: poke)
+        cell.configureCell(for: poke)
         
         return cell
     }
