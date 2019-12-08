@@ -15,9 +15,9 @@ class PokemonVC: UIViewController {
     
     var pokemon = [Cards](){
         didSet{
-            
-            tableView.reloadData()
-            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     override func viewDidLoad() {
@@ -35,6 +35,12 @@ class PokemonVC: UIViewController {
                 self.pokemon = cards
             }
         }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailVC = segue.destination as? PokemonDetailVC, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("segue issue")
+        }
+        detailVC.pokemon = pokemon[indexPath.row]
     }
 }
 extension PokemonVC: UITableViewDataSource {

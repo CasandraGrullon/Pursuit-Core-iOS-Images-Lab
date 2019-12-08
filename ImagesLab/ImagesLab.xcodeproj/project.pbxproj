@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C67F1FA4239D81DE0042EA9E /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67F1FA3239D81DE0042EA9E /* PokemonDetailVC.swift */; };
 		C6824822239B0A00001E076C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6824821239B0A00001E076C /* AppDelegate.swift */; };
 		C6824824239B0A00001E076C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6824823239B0A00001E076C /* SceneDelegate.swift */; };
 		C6824826239B0A00001E076C /* ComicsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6824825239B0A00001E076C /* ComicsVC.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C67F1FA3239D81DE0042EA9E /* PokemonDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
 		C682481E239B0A00001E076C /* ImagesLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagesLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6824821239B0A00001E076C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6824823239B0A00001E076C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				C6C5FE36239D4DED0040D636 /* PokemonVC.swift */,
 				C6A1F675239D507D001D6244 /* PokemonCell.swift */,
+				C67F1FA3239D81DE0042EA9E /* PokemonDetailVC.swift */,
 				C6A1F677239D521F001D6244 /* Pokemon.swift */,
 				C6C5FE33239D4DA00040D636 /* PokemonAPI.swift */,
 			);
@@ -195,6 +198,7 @@
 				C6A1F678239D521F001D6244 /* Pokemon.swift in Sources */,
 				C6C5FE37239D4DED0040D636 /* PokemonVC.swift in Sources */,
 				C6824822239B0A00001E076C /* AppDelegate.swift in Sources */,
+				C67F1FA4239D81DE0042EA9E /* PokemonDetailVC.swift in Sources */,
 				C6C5FE34239D4DA00040D636 /* PokemonAPI.swift in Sources */,
 				C6824824239B0A00001E076C /* SceneDelegate.swift in Sources */,
 			);
