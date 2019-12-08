@@ -9,7 +9,7 @@
 import UIKit
 
 class ComicsVC: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textFieldOutfield: UITextField!
     @IBOutlet weak var stepper: UIStepper!
@@ -27,12 +27,14 @@ class ComicsVC: UIViewController {
         loadComics()
         configureStepper()
     }
-
+    
     func configureStepper(){
+        let stringNumber: String = comics.first?.day ?? ""
+        let numberAsNumber = Double(stringNumber)
         stepper.minimumValue = 1.0
         stepper.maximumValue = 30.0
         stepper.stepValue = 1.0
-        stepper.value = 1.0
+        stepper.value = numberAsNumber ?? 1.0
     }
     
     func loadComics(){
@@ -48,6 +50,17 @@ class ComicsVC: UIViewController {
     
     @IBAction func stepperClicked(_ sender: UIStepper) {
         comicDay = sender.value
+        NetworkHelper.shared.performDataTask(with: comics.first?.img ?? "") { (result) in
+            switch result{
+            case .failure(let appError):
+               print("appError: \(appError)")
+            case .success(let data):
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            }
+        }
     }
     
     @IBAction func mostRecentButtonClicked(_ sender: UIButton) {

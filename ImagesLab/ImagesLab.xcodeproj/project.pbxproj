@@ -17,7 +17,10 @@
 		C6824838239C0DA3001E076C /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6824837239C0DA3001E076C /* AppError.swift */; };
 		C682483A239C1071001E076C /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6824839239C1071001E076C /* Comic.swift */; };
 		C682483D239C1186001E076C /* ComicAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C682483C239C1186001E076C /* ComicAPIClient.swift */; };
-		C6C5FE32239C1FC40040D636 /* ComicImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C5FE31239C1FC40040D636 /* ComicImageClient.swift */; };
+		C6A1F676239D507D001D6244 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1F675239D507D001D6244 /* PokemonCell.swift */; };
+		C6A1F678239D521F001D6244 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1F677239D521F001D6244 /* Pokemon.swift */; };
+		C6C5FE34239D4DA00040D636 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C5FE33239D4DA00040D636 /* PokemonAPI.swift */; };
+		C6C5FE37239D4DED0040D636 /* PokemonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C5FE36239D4DED0040D636 /* PokemonVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +36,10 @@
 		C6824837239C0DA3001E076C /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		C6824839239C1071001E076C /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
 		C682483C239C1186001E076C /* ComicAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicAPIClient.swift; sourceTree = "<group>"; };
-		C6C5FE31239C1FC40040D636 /* ComicImageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicImageClient.swift; sourceTree = "<group>"; };
+		C6A1F675239D507D001D6244 /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
+		C6A1F677239D521F001D6244 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		C6C5FE33239D4DA00040D636 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
+		C6C5FE36239D4DED0040D636 /* PokemonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 				C6824823239B0A00001E076C /* SceneDelegate.swift */,
 				C682483B239C107E001E076C /* comics */,
 				C6824827239B0A00001E076C /* Main.storyboard */,
+				C6C5FE35239D4DAB0040D636 /* Pokemon */,
 				C6824835239C0CFD001E076C /* NetworkHelper.swift */,
 				C6824837239C0DA3001E076C /* AppError.swift */,
 				C682483E239C1381001E076C /* Background */,
@@ -86,7 +93,6 @@
 				C6824825239B0A00001E076C /* ComicsVC.swift */,
 				C6824839239C1071001E076C /* Comic.swift */,
 				C682483C239C1186001E076C /* ComicAPIClient.swift */,
-				C6C5FE31239C1FC40040D636 /* ComicImageClient.swift */,
 			);
 			path = comics;
 			sourceTree = "<group>";
@@ -96,6 +102,17 @@
 			children = (
 			);
 			path = Background;
+			sourceTree = "<group>";
+		};
+		C6C5FE35239D4DAB0040D636 /* Pokemon */ = {
+			isa = PBXGroup;
+			children = (
+				C6C5FE36239D4DED0040D636 /* PokemonVC.swift */,
+				C6A1F675239D507D001D6244 /* PokemonCell.swift */,
+				C6A1F677239D521F001D6244 /* Pokemon.swift */,
+				C6C5FE33239D4DA00040D636 /* PokemonAPI.swift */,
+			);
+			path = Pokemon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,8 +191,11 @@
 				C6824826239B0A00001E076C /* ComicsVC.swift in Sources */,
 				C682483A239C1071001E076C /* Comic.swift in Sources */,
 				C6824838239C0DA3001E076C /* AppError.swift in Sources */,
+				C6A1F676239D507D001D6244 /* PokemonCell.swift in Sources */,
+				C6A1F678239D521F001D6244 /* Pokemon.swift in Sources */,
+				C6C5FE37239D4DED0040D636 /* PokemonVC.swift in Sources */,
 				C6824822239B0A00001E076C /* AppDelegate.swift in Sources */,
-				C6C5FE32239C1FC40040D636 /* ComicImageClient.swift in Sources */,
+				C6C5FE34239D4DA00040D636 /* PokemonAPI.swift in Sources */,
 				C6824824239B0A00001E076C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

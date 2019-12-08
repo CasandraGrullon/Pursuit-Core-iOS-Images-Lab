@@ -96,6 +96,69 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="116.51785714285714"/>
         </scene>
+        <!--PokemonVC-->
+        <scene sceneID="WS3-35-inm">
+            <objects>
+                <viewController id="utB-89-G85" customClass="PokemonVC" customModule="ImagesLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sKL-T7-XlJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wkR-Mk-4nY">
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pokemonCell" rowHeight="115" id="SLz-vL-4R6" customClass="PokemonCell" customModule="ImagesLab" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="115"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SLz-vL-4R6" id="dOE-sE-iQw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OdF-mR-lmK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="OdF-mR-lmK" secondAttribute="bottom" id="K6A-fI-Aj2"/>
+                                                <constraint firstAttribute="trailing" secondItem="OdF-mR-lmK" secondAttribute="trailing" id="N1C-z2-RUs"/>
+                                                <constraint firstItem="OdF-mR-lmK" firstAttribute="leading" secondItem="dOE-sE-iQw" secondAttribute="leading" id="cCm-gO-EBU"/>
+                                                <constraint firstItem="OdF-mR-lmK" firstAttribute="top" secondItem="dOE-sE-iQw" secondAttribute="top" id="d1e-ZB-jt2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pokemonThumbImage" destination="OdF-mR-lmK" id="iW3-fJ-dnV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="4qE-BC-xL4">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4qE-BC-xL4" firstAttribute="trailing" secondItem="XYC-qf-lCK" secondAttribute="trailing" id="EQ9-VK-Qos"/>
+                            <constraint firstItem="wkR-Mk-4nY" firstAttribute="bottom" secondItem="XYC-qf-lCK" secondAttribute="bottom" id="OEM-x5-kor"/>
+                            <constraint firstItem="4qE-BC-xL4" firstAttribute="leading" secondItem="XYC-qf-lCK" secondAttribute="leading" id="Poz-xK-l4V"/>
+                            <constraint firstItem="wkR-Mk-4nY" firstAttribute="leading" secondItem="XYC-qf-lCK" secondAttribute="leading" id="XzU-wy-Wfx"/>
+                            <constraint firstItem="XYC-qf-lCK" firstAttribute="trailing" secondItem="wkR-Mk-4nY" secondAttribute="trailing" id="rSO-Bo-qNw"/>
+                            <constraint firstItem="wkR-Mk-4nY" firstAttribute="top" secondItem="4qE-BC-xL4" secondAttribute="bottom" id="u7q-YF-MiE"/>
+                            <constraint firstItem="4qE-BC-xL4" firstAttribute="top" secondItem="XYC-qf-lCK" secondAttribute="top" id="zmd-ta-aj6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XYC-qf-lCK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hSU-uc-S6y"/>
+                    <connections>
+                        <outlet property="searchBar" destination="4qE-BC-xL4" id="NbE-DF-Q6J"/>
+                        <outlet property="tableView" destination="wkR-Mk-4nY" id="bts-SV-IUX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="71q-bt-7mv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1931.8840579710147" y="781.47321428571422"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lKB-hP-WbQ">
             <objects>
@@ -105,17 +168,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.87404822339999999" green="0.076940509130000001" blue="0.093179659250000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="lsY-wt-bD3" kind="relationship" relationship="viewControllers" id="jug-cX-f7P"/>
+                        <segue destination="Swf-5q-RWq" kind="relationship" relationship="viewControllers" id="zzo-Gk-mo0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fS-7b-n2B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
+        <!--Pokemon-->
+        <scene sceneID="Saf-5B-9Sc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Swf-5q-RWq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pokemon" image="smallcircle.circle" catalog="system" id="TG8-2p-Ab9"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kEK-f5-tub">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="utB-89-G85" kind="relationship" relationship="rootViewController" id="XSs-zM-480"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HgS-H3-4Ge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.7391304347827" y="781.47321428571422"/>
+        </scene>
     </scenes>
     <resources>
         <image name="book" catalog="system" width="64" height="50"/>
+        <image name="smallcircle.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>
