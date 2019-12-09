@@ -24,6 +24,7 @@ class PokemonVC: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        searchBar.delegate = self
         loadData()
     }
     func loadData(){
@@ -36,6 +37,17 @@ class PokemonVC: UIViewController {
             }
         }
     }
+//    func filterSearch(for searchText: String){
+//        PokemonAPI.getPokemon { (result) in
+//            switch result{
+//            case .failure(let appError):
+//                print(appError)
+//            case .success(let data):
+//
+//            }
+//        }
+//    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailVC = segue.destination as? PokemonDetailVC, let indexPath = tableView.indexPathForSelectedRow else {
             fatalError("segue issue")
@@ -66,4 +78,8 @@ extension PokemonVC: UITableViewDelegate{
         return 150
         
     }
+}
+
+extension PokemonVC: UISearchBarDelegate{
+    
 }

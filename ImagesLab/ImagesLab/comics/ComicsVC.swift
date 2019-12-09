@@ -16,7 +16,7 @@ class ComicsVC: UIViewController {
     
     var comics = [Comic]()
     
-    var comicDay: Double = 1.0 {
+    var comicDay: Double = 600 {
         didSet{
             print("value: \(stepper.value)")
         }
@@ -25,29 +25,29 @@ class ComicsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureStepper()
+        loadDataforComic(comicDay: Int(stepper.value))
     }
     
-    func configureStepper(){
-        let stringNumber: String = comics.first?.day ?? ""
-        let numberAsNumber = Double(stringNumber)
-        stepper.minimumValue = 1.0
-        stepper.maximumValue = 30.0
-        stepper.stepValue = 1.0
-        stepper.value = numberAsNumber ?? 1.0
-    }
-    
-    @IBAction func stepperClicked(_ sender: UIStepper) {
-        comicDay = sender.value
-        var selected = [Comic]()
-        for comic in comics {
-            if Double(comic.day) == comicDay{
-                selected.append(comic)
-            }
-        }
-        NetworkHelper.shared.performDataTask(with: selected.first?.img ?? "") { (result) in
+    func loadDataforComic(comicDay:Int){
+        ComicAPIClient.getComic(for: comicDay) { (result) in
             switch result{
             case .failure(let appError):
-               print("appError: \(appError)")
+                print("appError: \(appError)")
+            case .success(let comic):
+                DispatchQueue.main.async {
+                    self.textFieldOutfield.text = comic.num.description
+                    print(comic.img)
+                    self.loadDataforImage(comicImage: comic.img)
+                    self.stepper.value = Double(comic.num)
+                }
+            }
+        }
+    }
+    func loadDataforImage(comicImage: String){
+        NetworkHelper.shared.performDataTask(with: comicImage) { (result) in
+            switch result{
+            case .failure(let appError):
+                print(appError)
             case .success(let data):
                 let image = UIImage(data: data)
                 DispatchQueue.main.async {
@@ -57,6 +57,19 @@ class ComicsVC: UIViewController {
         }
     }
     
+    
+    func configureStepper(){
+        stepper.minimumValue = Double(comics.first?.num ?? 600)
+        stepper.maximumValue = Double(comics.last?.num ?? 614)
+        stepper.stepValue = 1.0
+        stepper.value = Double(comics.first?.num ?? 600)
+    }
+    
+    @IBAction func stepperClicked(_ sender: UIStepper) {
+        loadDataforComic(comicDay: Int(sender.value))
+
+    }
+        
     @IBAction func mostRecentButtonClicked(_ sender: UIButton) {
         
     }
