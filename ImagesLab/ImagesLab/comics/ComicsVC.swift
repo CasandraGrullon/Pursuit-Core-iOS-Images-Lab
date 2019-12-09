@@ -24,7 +24,6 @@ class ComicsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadComics()
         configureStepper()
     }
     
@@ -37,20 +36,15 @@ class ComicsVC: UIViewController {
         stepper.value = numberAsNumber ?? 1.0
     }
     
-    func loadComics(){
-        ComicAPIClient.getComic { (result) in
-            switch result {
-            case .failure(let appError):
-                print("appError: \(appError)")
-            case .success(let comics):
-                print("comics count: \(comics)")
-            }
-        }
-    }
-    
     @IBAction func stepperClicked(_ sender: UIStepper) {
         comicDay = sender.value
-        NetworkHelper.shared.performDataTask(with: comics.first?.img ?? "") { (result) in
+        var selected = [Comic]()
+        for comic in comics {
+            if Double(comic.day) == comicDay{
+                selected.append(comic)
+            }
+        }
+        NetworkHelper.shared.performDataTask(with: selected.first?.img ?? "") { (result) in
             switch result{
             case .failure(let appError):
                print("appError: \(appError)")
