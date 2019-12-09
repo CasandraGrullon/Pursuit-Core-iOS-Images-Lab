@@ -67,15 +67,21 @@ class ComicsVC: UIViewController {
     
     @IBAction func stepperClicked(_ sender: UIStepper) {
         loadDataforComic(comicDay: Int(sender.value))
-
     }
         
     @IBAction func mostRecentButtonClicked(_ sender: UIButton) {
-        
+        loadDataforComic(comicDay: Int(stepper.maximumValue))
     }
     
     @IBAction func randomButtonPressed(_ sender: UIButton) {
+        var arrayOfNum = [Int]()
+        for comic in comics {
+            arrayOfNum.append(comic.num)
+        }
         
+        let randomComic = Double.random(in: stepper.minimumValue...stepper.maximumValue)
+        
+        loadDataforComic(comicDay: Int(randomComic))
     }
     
 }
