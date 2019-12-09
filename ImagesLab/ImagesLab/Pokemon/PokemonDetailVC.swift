@@ -29,7 +29,7 @@ class PokemonDetailVC: UIViewController {
         nameLabel.text = poke.name
         typeLabel.text = "\(poke.types?.first ?? "") type"
         weaknessLabel.text = "Weaknesses: \(poke.weaknesses?.first?.type ?? "") Damage: \(poke.weaknesses?.first?.value ?? "")"
-        setLabel.text = "Set: \(poke.set)"
+        setLabel.text = (poke.set)
         
         NetworkHelper.shared.performDataTask(with: poke.imageUrlHiRes) { [unowned self] (result) in
             switch result{

@@ -21,7 +21,6 @@ class ComicsVC: UIViewController {
             print("value: \(stepper.value)")
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureStepper()

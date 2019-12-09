@@ -15,4 +15,5 @@ enum AppError: Error {
     case noData
     case badStatusCode(Int)
     case decodingError(Error)
+    case missingValue
 }

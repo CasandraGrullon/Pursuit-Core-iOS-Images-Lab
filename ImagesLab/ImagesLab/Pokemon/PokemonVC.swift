@@ -37,16 +37,10 @@ class PokemonVC: UIViewController {
             }
         }
     }
-//    func filterSearch(for searchText: String){
-//        PokemonAPI.getPokemon { (result) in
-//            switch result{
-//            case .failure(let appError):
-//                print(appError)
-//            case .success(let data):
-//
-//            }
-//        }
-//    }
+    func filterSearch(for searchText: String){
+        pokemon = pokemon.filter{$0.name.lowercased().contains(searchText.lowercased())}
+        
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailVC = segue.destination as? PokemonDetailVC, let indexPath = tableView.indexPathForSelectedRow else {
@@ -81,5 +75,15 @@ extension PokemonVC: UITableViewDelegate{
 }
 
 extension PokemonVC: UISearchBarDelegate{
-    
-}
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            loadData()
+            return
+        }
+        filterSearch(for: searchText)
+    }
+    }
+

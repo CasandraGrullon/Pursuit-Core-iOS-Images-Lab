@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C625D398239F07B700063487 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = C625D397239F07B700063487 /* Users.swift */; };
 		C67F1FA4239D81DE0042EA9E /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67F1FA3239D81DE0042EA9E /* PokemonDetailVC.swift */; };
 		C6824822239B0A00001E076C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6824821239B0A00001E076C /* AppDelegate.swift */; };
 		C6824824239B0A00001E076C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6824823239B0A00001E076C /* SceneDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C625D397239F07B700063487 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		C67F1FA3239D81DE0042EA9E /* PokemonDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
 		C682481E239B0A00001E076C /* ImagesLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagesLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6824821239B0A00001E076C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C625D399239F0BB400063487 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				C625D397239F07B700063487 /* Users.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		C6824815239B0A00001E076C = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 				C682483B239C107E001E076C /* comics */,
 				C6824827239B0A00001E076C /* Main.storyboard */,
 				C6C5FE35239D4DAB0040D636 /* Pokemon */,
+				C625D399239F0BB400063487 /* Users */,
 				C6824835239C0CFD001E076C /* NetworkHelper.swift */,
 				C6824837239C0DA3001E076C /* AppError.swift */,
 				C682483E239C1381001E076C /* Background */,
@@ -198,6 +209,7 @@
 				C6A1F678239D521F001D6244 /* Pokemon.swift in Sources */,
 				C6C5FE37239D4DED0040D636 /* PokemonVC.swift in Sources */,
 				C6824822239B0A00001E076C /* AppDelegate.swift in Sources */,
+				C625D398239F07B700063487 /* Users.swift in Sources */,
 				C67F1FA4239D81DE0042EA9E /* PokemonDetailVC.swift in Sources */,
 				C6C5FE34239D4DA00040D636 /* PokemonAPI.swift in Sources */,
 				C6824824239B0A00001E076C /* SceneDelegate.swift in Sources */,
