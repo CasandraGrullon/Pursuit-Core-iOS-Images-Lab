@@ -24,6 +24,7 @@
 		C6AE1C85239FDD1E00DEC02C /* UsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AE1C84239FDD1E00DEC02C /* UsersVC.swift */; };
 		C6AE1C87239FDE5C00DEC02C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AE1C86239FDE5C00DEC02C /* UserCell.swift */; };
 		C6AE1C89239FDF8900DEC02C /* UserAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AE1C88239FDF8900DEC02C /* UserAPIClient.swift */; };
+		C6AE1C9523A028F600DEC02C /* UserDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AE1C9423A028F600DEC02C /* UserDetailVC.swift */; };
 		C6C5FE34239D4DA00040D636 /* PokemonAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C5FE33239D4DA00040D636 /* PokemonAPI.swift */; };
 		C6C5FE37239D4DED0040D636 /* PokemonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C5FE36239D4DED0040D636 /* PokemonVC.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		C6AE1C84239FDD1E00DEC02C /* UsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVC.swift; sourceTree = "<group>"; };
 		C6AE1C86239FDE5C00DEC02C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		C6AE1C88239FDF8900DEC02C /* UserAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIClient.swift; sourceTree = "<group>"; };
+		C6AE1C9423A028F600DEC02C /* UserDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailVC.swift; sourceTree = "<group>"; };
 		C6C5FE33239D4DA00040D636 /* PokemonAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAPI.swift; sourceTree = "<group>"; };
 		C6C5FE36239D4DED0040D636 /* PokemonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +71,7 @@
 				C625D397239F07B700063487 /* Users.swift */,
 				C6AE1C88239FDF8900DEC02C /* UserAPIClient.swift */,
 				C6AE1C84239FDD1E00DEC02C /* UsersVC.swift */,
+				C6AE1C9423A028F600DEC02C /* UserDetailVC.swift */,
 				C6AE1C86239FDE5C00DEC02C /* UserCell.swift */,
 			);
 			path = Users;
@@ -210,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6824836239C0CFD001E076C /* NetworkHelper.swift in Sources */,
+				C6AE1C9523A028F600DEC02C /* UserDetailVC.swift in Sources */,
 				C682483D239C1186001E076C /* ComicAPIClient.swift in Sources */,
 				C6824826239B0A00001E076C /* ComicsVC.swift in Sources */,
 				C6AE1C85239FDD1E00DEC02C /* UsersVC.swift in Sources */,
