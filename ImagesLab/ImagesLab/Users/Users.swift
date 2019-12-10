@@ -13,10 +13,12 @@ struct Users: Decodable {
 }
 
 struct User: Decodable {
-    let name: String
-    let location: String
+    let name: Name
+    let location: Location
+    let dob: Dob
     let phone: String
     let cell: String
+    let picture: Picture
 }
 
 struct Name: Decodable {
@@ -25,12 +27,16 @@ struct Name: Decodable {
 }
 
 struct Location: Decodable {
-    let street: [Street]
+    let street: Street
     let city: String
     let state: String
     let country: String
     let postcode: Postcode
     
+}
+
+struct Dob: Decodable {
+    let age: Int
 }
 
 struct Street: Decodable {
@@ -55,4 +61,18 @@ enum Postcode: Decodable {
         }
         throw AppError.missingValue
     }
+    func turnToString() -> String {
+        switch self {
+        case .int(let intValue):
+            return intValue.description
+        case .string(let stringValue):
+            return stringValue
+        }
+        
+    }
+}
+
+struct Picture: Decodable{
+    let large: String
+    let thumbnail: String
 }
