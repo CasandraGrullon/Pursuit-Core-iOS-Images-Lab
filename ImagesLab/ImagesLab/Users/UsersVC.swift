@@ -14,13 +14,17 @@ class UsersVC: UIViewController {
     
     var users = [User](){
         didSet{
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+
+            }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         loadData()
 
     }
@@ -51,5 +55,10 @@ extension UsersVC: UITableViewDataSource{
         
         cell.configureUserCell(for: user)
         return cell
+    }
+}
+extension UsersVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
 }
