@@ -11,7 +11,7 @@ import UIKit
 class ComicsVC: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var textFieldOutfield: UITextField!
+    @IBOutlet weak var myText: UITextField!
     @IBOutlet weak var stepper: UIStepper!
     
     var comics = [Comic]()
@@ -25,6 +25,7 @@ class ComicsVC: UIViewController {
         super.viewDidLoad()
         configureStepper()
         loadDataforComic(comicDay: Int(stepper.value))
+        myText.delegate = self
     }
     
     func loadDataforComic(comicDay:Int){
@@ -34,8 +35,7 @@ class ComicsVC: UIViewController {
                 print("appError: \(appError)")
             case .success(let comic):
                 DispatchQueue.main.async {
-                    self.textFieldOutfield.text = comic.num.description
-                    print(comic.img)
+                    self.myText.text = comic.num.description
                     self.loadDataforImage(comicImage: comic.img)
                     self.stepper.value = Double(comic.num)
                 }
@@ -85,3 +85,16 @@ class ComicsVC: UIViewController {
     
 }
 
+extension ComicsVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        let stringInt = Int(myText.text!)
+        loadDataforComic(comicDay: stringInt!)
+        return true
+    }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.text = ""
+        return true
+    }
+
+}
