@@ -38,7 +38,7 @@ class PokemonVC: UIViewController {
         }
     }
     func filterSearch(for searchText: String){
-        pokemon = pokemon.filter{$0.name.lowercased().contains(searchText.lowercased())}
+        pokemon = pokemon.filter{($0.types?.first?.lowercased() ?? "").contains(searchText.lowercased())}
         
     }
     
@@ -69,7 +69,7 @@ extension PokemonVC: UITableViewDataSource {
 
 extension PokemonVC: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 600
         
     }
 }

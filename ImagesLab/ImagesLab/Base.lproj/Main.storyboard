@@ -81,7 +81,9 @@
         <scene sceneID="J07-EI-6yd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lsY-wt-bD3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Comics" image="book" catalog="system" id="hdv-Y3-QZ4"/>
+                    <tabBarItem key="tabBarItem" title="Comics" image="book" catalog="system" id="hdv-Y3-QZ4">
+                        <color key="badgeColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A4a-b5-SIO">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -104,7 +106,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="4qE-BC-xL4">
+                            <searchBar contentMode="redraw" placeholder="search Pokemon by type" translatesAutoresizingMaskIntoConstraints="NO" id="4qE-BC-xL4">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -120,29 +122,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="85K-Ea-lAd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="142"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="zsJ-4z-Qeo"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUY-2r-Xh4">
-                                                    <rect key="frame" x="158" y="0.0" width="256" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="MUY-2r-Xh4" secondAttribute="trailing" id="91e-wL-pmz"/>
-                                                <constraint firstItem="MUY-2r-Xh4" firstAttribute="leading" secondItem="85K-Ea-lAd" secondAttribute="trailing" constant="8" id="CDJ-yl-lP7"/>
-                                                <constraint firstItem="MUY-2r-Xh4" firstAttribute="top" secondItem="o4a-B4-3p9" secondAttribute="top" id="Myv-CH-Pan"/>
-                                                <constraint firstItem="85K-Ea-lAd" firstAttribute="top" secondItem="o4a-B4-3p9" secondAttribute="top" id="bMy-Zb-0mV"/>
-                                                <constraint firstAttribute="bottom" secondItem="85K-Ea-lAd" secondAttribute="bottom" id="isw-he-3Ea"/>
-                                                <constraint firstItem="85K-Ea-lAd" firstAttribute="leading" secondItem="o4a-B4-3p9" secondAttribute="leading" id="n0o-8N-gkb"/>
+                                                <constraint firstAttribute="bottom" secondItem="85K-Ea-lAd" secondAttribute="bottom" id="ENm-ig-sYK"/>
+                                                <constraint firstItem="85K-Ea-lAd" firstAttribute="top" secondItem="o4a-B4-3p9" secondAttribute="top" id="GM9-Du-hvG"/>
+                                                <constraint firstItem="85K-Ea-lAd" firstAttribute="leading" secondItem="o4a-B4-3p9" secondAttribute="leading" id="Pqh-we-70V"/>
+                                                <constraint firstAttribute="trailing" secondItem="85K-Ea-lAd" secondAttribute="trailing" id="yIF-wX-Qwv"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="nameLabel" destination="MUY-2r-Xh4" id="gdA-qe-HsF"/>
                                             <outlet property="pokemonThumbImage" destination="85K-Ea-lAd" id="8mS-br-LWp"/>
                                             <segue destination="5Ce-hA-Hrl" kind="show" id="vjI-um-2iG"/>
                                         </connections>
@@ -251,12 +241,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.87404822339999999" green="0.076940509130000001" blue="0.093179659250000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="lsY-wt-bD3" kind="relationship" relationship="viewControllers" id="jug-cX-f7P"/>
                         <segue destination="Swf-5q-RWq" kind="relationship" relationship="viewControllers" id="zzo-Gk-mo0"/>
-                        <segue destination="SJy-Qx-x9D" kind="relationship" relationship="viewControllers" id="EC5-Cx-y3I"/>
+                        <segue destination="SJy-Qx-x9D" kind="relationship" relationship="viewControllers" id="ShU-md-wfy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9fS-7b-n2B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -267,7 +257,9 @@
         <scene sceneID="Saf-5B-9Sc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Swf-5q-RWq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pokemon" image="smallcircle.circle" catalog="system" id="TG8-2p-Ab9"/>
+                    <tabBarItem key="tabBarItem" title="Pokemon" image="smallcircle.circle" catalog="system" id="TG8-2p-Ab9">
+                        <color key="badgeColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kEK-f5-tub">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -450,11 +442,13 @@
             </objects>
             <point key="canvasLocation" x="2723" y="1462"/>
         </scene>
-        <!--Item-->
+        <!--Users-->
         <scene sceneID="ekL-ac-DJW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SJy-Qx-x9D" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="person.3.fill" catalog="system" id="CnJ-3W-eS8"/>
+                    <tabBarItem key="tabBarItem" title="Users" image="person.3.fill" catalog="system" selectedImage="person.3.fill" id="CnJ-3W-eS8">
+                        <color key="badgeColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SrB-oM-ZjG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
